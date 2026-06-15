@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Happy Jain | Educator & Mentor | Sanskriti Gurukulam</title>
+    <!-- Google Fonts & simple reset -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #faf9f8;
+            color: #1e1e2a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* header & navigation */
+        header {
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(2px);
+            background: rgba(255, 255, 255, 0.96);
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            gap: 1rem;
+        }
+
+        .logo h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2b5e3b, #1f8a4c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+        }
+
+        .logo p {
+            font-size: 0.8rem;
+            color: #4b5563;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2c3e2f;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: #1f8a4c;
+            border-bottom: 2px solid #1f8a4c;
+            padding-bottom: 4px;
+        }
+
+        /* hero / profile section */
+        .hero {
+            background: linear-gradient(145deg, #eef5ea 0%, #ffffff 100%);
+            border-radius: 2rem;
+            margin: 2rem 0 2rem 0;
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+        }
+
+        .hero-content h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #1c3e2b;
+        }
+
+        .badge {
+            background: #e9f5e9;
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #1f8a4c;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-details {
+            margin-top: 1.2rem;
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1rem 1.5rem;
+            display: inline-flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+        }
+
+        .contact-item strong {
+            font-weight: 600;
+            min-width: 70px;
+            color: #2d4a22;
+        }
+
+        .contact-item a {
+            color: #1f8a4c;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .hero-avatar {
+            background: #d9e6cf;
+            border-radius: 50%;
+            width: 160px;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            box-shadow: 0 12px 18px rgba(0,0,0,0.05);
+        }
+
+        /* page sections: common */
+        .page-section {
+            background: white;
+            border-radius: 2rem;
+            padding: 2rem 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+            border: 1px solid #ecf3e9;
+            transition: all 0.2s;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1f3b2c;
+            margin-bottom: 1.5rem;
+            border-left: 6px solid #2e8b57;
+            padding-left: 1rem;
+        }
+
+        .policy-content, .terms-content, .contact-content {
+            color: #2d3e2f;
+        }
+
+        .policy-content h3, .terms-content h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        .policy-content p, .terms-content p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+        }
+
+        .contact-card {
+            background: #fefdfa;
+            flex: 1;
+            min-width: 240px;
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+            border: 1px solid #e2f0e2;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .contact-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #266e3e;
+        }
+
+        .map-mock {
+            background: #eef2ea;
+            padding: 2rem;
+            border-radius: 1.2rem;
+            text-align: center;
+            font-style: normal;
+            color: #2b5e3b;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        footer {
+            background: #1e2a22;
+            color: #cddfc9;
+            padding: 2rem 0 1.5rem;
+            margin-top: 2rem;
+            border-radius: 1.5rem 1.5rem 0 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            opacity: 0.85;
+        }
+
+        .footer-links a {
+            color: #c7e0bf;
+            text-decoration: none;
+            margin: 0 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .btn-reset {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        hr {
+            margin: 0.5rem 0;
+            border-color: #e2efe2;
+        }
+
+        @media (max-width: 680px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .contact-details {
+                align-items: flex-start;
+                width: 100%;
+            }
+            .hero-content {
+                width: 100%;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <h1>Happy Jain</h1>
+                <p>Educator · Mentor · Guide</p>
+            </div>
+            <div class="nav-links">
+                <a href="#" data-page="home">Home</a>
+                <a href="#" data-page="privacy">Privacy Policy</a>
+                <a href="#" data-page="terms">Terms & Conditions</a>
+                <a href="#" data-page="contact">Contact</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main class="container" id="main-content">
+    <!-- dynamic content will be injected here -->
+    <div id="page-render"></div>
+</main>
+
+<footer>
+    <div class="container footer-inner">
+        <div class="copyright">
+            © 2026 Happy Jain — All rights reserved.
+        </div>
+        <div class="footer-links">
+            <a href="#" data-page="privacy">Privacy</a>
+            <a href="#" data-page="terms">Terms</a>
+            <a href="#" data-page="contact">Contact</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // ---------- DATA ----------
+    const contactInfo = {
+        email: "Happyjain@live.in",
+        phone: "9131212007",
+        school: "Sanskriti Gurukulam School",
+        address: "Morar, Gwalior (M.P.) - 474006"
+    };
+
+    // ---------- PAGE COMPONENTS (HTML strings) ----------
+    const HomePage = () => `
+        <div class="hero">
+            <div class="hero-content">
+                <div class="badge">🌟 Dedicated Educator & Mentor</div>
+                <h2>Happy Jain</h2>
+                <p style="margin-top: 0.5rem; font-size: 1.1rem;">Creating meaningful impact through education & values at <strong>Sanskriti Gurukulam School, Morar Gwalior</strong>.</p>
+                <div class="contact-details">
+                    <div class="contact-item"><strong>📧 Email:</strong> <a href="mailto:${contactInfo.email}">${contactInfo.email}</a></div>
+                    <div class="contact-item"><strong>📞 Phone:</strong> <a href="tel:${contactInfo.phone}">${contactInfo.phone}</a></div>
+                    <div class="contact-item"><strong>🏫 School:</strong> ${contactInfo.school}</div>
+                    <div class="contact-item"><strong>📍 Location:</strong> ${contactInfo.address}</div>
+                </div>
+            </div>
+            <div class="hero-avatar">
+                🌿
+            </div>
+        </div>
+        <div class="page-section">
+            <h3 class="section-title">About Happy Jain</h3>
+            <p>Happy Jain is an inspiring educator based at Sanskriti Gurukulam School in Morar, Gwalior. With a passion for holistic learning and student empowerment, Happy believes in nurturing young minds through academics, culture, and life skills. The approach blends modern pedagogical methods with traditional values, helping students become confident, compassionate individuals.</p>
+            <p>Being deeply rooted in the local community, Happy Jain constantly works to bridge the gap between quality education and accessibility. The journey reflects dedication, warmth, and a vision to build a brighter future for every child.</p>
+        </div>
+        <div class="page-section">
+            <h3 class="section-title">Sanskriti Gurukulam School – At a Glance</h3>
+            <p>Sanskriti Gurukulam School, located in Morar Gwalior, is renowned for its emphasis on value-based education, academic excellence, and co-curricular enrichment. The school fosters an environment where students flourish under the guidance of teachers like Happy Jain.</p>
+        </div>
+    `;
+
+    const PrivacyPage = () => `
+        <div class="page-section">
+            <h2 class="section-title">Privacy Policy</h2>
+            <div class="policy-content">
+                <p><strong>Effective Date:</strong> 1 January 2026</p>
+                <p>At Happy Jain (represented via this personal & professional website), your privacy is respected. This Privacy Policy describes how any personal data collected through this website — including contact forms or email communication — is handled.</p>
+                
+                <h3>1. Information Collected</h3>
+                <p>We may collect personal information such as your name, email address, or phone number only when you voluntarily contact us via email, phone, or direct messages. No automatic tracking cookies or analytics tools are used for invasive tracking. Basic server logs may retain technical information (like IP address) for security and performance, but are not used for marketing purposes.</p>
+                
+                <h3>2. Use of Information</h3>
+                <p>Information provided is solely used to respond to inquiries, share educational updates (if consent is obtained), or support communication related to Sanskriti Gurukulam School and academic collaborations. We never sell, trade, or rent your personal information to third parties.</p>
+                
+                <h3>3. Data Security</h3>
+                <p>We implement reasonable safeguards to protect against unauthorized access, alteration, or destruction of personal data. However, no online transmission is 100% secure; use discretion.</p>
+                
+                <h3>4. Third-Party Links</h3>
+                <p>This site may contain links to external resources. We are not responsible for the privacy practices of other websites.</p>
+                
+                <h3>5. Children’s Privacy</h3>
+                <p>Our services are intended for adults (parents, guardians, educators). If you are a minor, please seek parental guidance before sharing information.</p>
+                
+                <h3>6. Contact Regarding Privacy</h3>
+                <p>For any privacy-related questions, please reach out at <strong>${contactInfo.email}</strong>.</p>
+                <p style="margin-top: 1rem;"><em>Last updated: March 2026</em></p>
+            </div>
+        </div>
+    `;
+
+    const TermsPage = () => `
+        <div class="page-section">
+            <h2 class="section-title">Terms & Conditions</h2>
+            <div class="terms-content">
+                <p>Welcome to the official website of Happy Jain. By accessing or using this website, you agree to comply with and be bound by the following terms and conditions.</p>
+                
+                <h3>1. Use of Content</h3>
+                <p>All materials displayed — including text, graphics, and logos — are for personal, non-commercial informational use. You may not reproduce, distribute, or exploit any content without prior written permission from Happy Jain.</p>
+                
+                <h3>2. Educational Purpose</h3>
+                <p>This website serves as a professional presence for communication with students, parents, and colleagues from Sanskriti Gurukulam School, Morar Gwalior. The information provided does not constitute professional or legal advice.</p>
+                
+                <h3>3. External Links</h3>
+                <p>Links to third-party websites are provided for convenience; we do not endorse or assume responsibility for the content or practices of those sites.</p>
+                
+                <h3>4. Limitation of Liability</h3>
+                <p>To the fullest extent permitted by law, Happy Jain shall not be liable for any indirect, incidental, or consequential damages arising from the use or inability to use this website.</p>
+                
+                <h3>5. Modification of Terms</h3>
+                <p>We reserve the right to update these terms at any time. Changes become effective immediately upon posting. Continued use signifies acceptance.</p>
+                
+                <h3>6. Governing Law</h3>
+                <p>These terms are governed by the laws of India, and any disputes shall be subject to the jurisdiction of courts in Gwalior, Madhya Pradesh.</p>
+                
+                <p><strong>Contact for concerns:</strong> <a href="mailto:${contactInfo.email}">${contactInfo.email}</a> or phone: ${contactInfo.phone}</p>
+            </div>
+        </div>
+    `;
+
+    const ContactPage = () => `
+        <div class="page-section">
+            <h2 class="section-title">Contact & Connect</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h4>📧 Email Directly</h4>
+                    <p>Reach out for academic inquiries, collaborations, or student guidance.</p>
+                    <p><strong><a href="mailto:${contactInfo.email}" style="color:#1f8a4c;">${contactInfo.email}</a></strong></p>
+                </div>
+                <div class="contact-card">
+                    <h4>📞 Phone / WhatsApp</h4>
+                    <p>Feel free to call during school hours (9 AM – 4 PM, weekdays).</p>
+                    <p><strong><a href="tel:${contactInfo.phone}">${contactInfo.phone}</a></strong></p>
+                </div>
+                <div class="contact-card">
+                    <h4>🏫 Visit the School</h4>
+                    <p>Sanskriti Gurukulam School<br>Morar, Gwalior (M.P.)<br>Pin: 474006</p>
+                </div>
+            </div>
+            <div class="map-mock">
+                📍 <strong>Address reference:</strong> Sanskriti Gurukulam School, Near Morar Road, Gwalior – 474006<br>
+                (Landmark: Morar Cantt Area)
+            </div>
+            <div style="margin-top: 2rem; background:#f5f9f2; padding: 1rem; border-radius: 1rem;">
+                <p style="font-weight: 500;">⭐ For quick responses, please include your name and purpose in the email or message. We look forward to connecting with you.</p>
+            </div>
+        </div>
+    `;
+
+    // ---- Router State ----
+    let currentPage = "home";   // home, privacy, terms, contact
+
+    function renderPage() {
+        const renderDiv = document.getElementById("page-render");
+        if (!renderDiv) return;
+        switch (currentPage) {
+            case "home":
+                renderDiv.innerHTML = HomePage();
+                break;
+            case "privacy":
+                renderDiv.innerHTML = PrivacyPage();
+                break;
+            case "terms":
+                renderDiv.innerHTML = TermsPage();
+                break;
+            case "contact":
+                renderDiv.innerHTML = ContactPage();
+                break;
+            default:
+                renderDiv.innerHTML = HomePage();
+        }
+        // update browser URL hash without reload (optional)
+        window.location.hash = currentPage === "home" ? "" : currentPage;
+    }
+
+    function setActivePage(pageId) {
+        currentPage = pageId;
+        renderPage();
+        // scroll to top for smoother experience
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // event handlers for nav links (both header and footer)
+    function attachNavEvents() {
+        const allNavLinks = document.querySelectorAll("[data-page]");
+        allNavLinks.forEach(link => {
+            link.removeEventListener("click", navClickHandler);
+            link.addEventListener("click", navClickHandler);
+        });
+    }
+
+    function navClickHandler(e) {
+        e.preventDefault();
+        const page = e.currentTarget.getAttribute("data-page");
+        if (page && ["home", "privacy", "terms", "contact"].includes(page)) {
+            setActivePage(page);
+        } else {
+            setActivePage("home");
+        }
+    }
+
+    // handle initial hash routing
+    function handleHashChange() {
+        let hash = window.location.hash.replace("#", "");
+        if (hash === "privacy" || hash === "terms" || hash === "contact") {
+            currentPage = hash;
+        } else if (hash === "") {
+            currentPage = "home";
+        } else {
+            // unknown hash, reset
+            currentPage = "home";
+        }
+        renderPage();
+        attachNavEvents();  // refresh because DOM changed
+    }
+
+    // initial load & watch for hash changes
+    window.addEventListener("DOMContentLoaded", () => {
+        // set default if no hash or invalid hash
+        if (window.location.hash && ["#privacy", "#terms", "#contact", "#home", "#"].includes(window.location.hash)) {
+            if (window.location.hash === "#home" || window.location.hash === "#") {
+                currentPage = "home";
+            } else {
+                currentPage = window.location.hash.substring(1);
+            }
+        } else {
+            currentPage = "home";
+        }
+        renderPage();
+        attachNavEvents();
+        window.addEventListener("hashchange", handleHashChange);
+    });
+</script>
+
+<!-- ensure that dynamic re-attach works after any possible re-render -->
+</body>
+</html>
